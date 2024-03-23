@@ -41,6 +41,7 @@ public class Function
                 var authRequest = new InitiateAdminNoSrpAuthRequest { Password = auth.Password };
                 var authResponse = await user.StartWithAdminNoSrpAuthAsync(authRequest);
 
+                context.Logger.LogLine($"Auth response: {JsonSerializer.Serialize(authResponse)}");
                 if (authResponse.AuthenticationResult != null)
                 {
                     return HttpStatusResult.Ok(JsonSerializer.Serialize(new
