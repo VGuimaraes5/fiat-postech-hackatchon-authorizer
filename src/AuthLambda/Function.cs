@@ -29,7 +29,7 @@ public class Function
             if (auth == null)
                 return HttpStatusResult.BadRequest("Invalid body!");
 
-            using (var provider = new AmazonCognitoIdentityProviderClient(RegionEndpoint.USEast2))
+            using (var provider = new AmazonCognitoIdentityProviderClient(RegionEndpoint.USEast1))
             {
                 var userPoolService = new UserPoolService(provider);
 
